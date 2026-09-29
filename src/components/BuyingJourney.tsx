@@ -80,7 +80,7 @@ export default function BuyingJourney() {
   );
 
   return (
-    <section ref={sectionRef} className="py-24 lg:py-32 relative">
+    <section ref={sectionRef} className="py-16 sm:py-24 lg:py-32 relative">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div ref={headingRef} className="text-center max-w-2xl mx-auto mb-16">
@@ -88,7 +88,7 @@ export default function BuyingJourney() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="font-[var(--font-display)] text-4xl lg:text-5xl font-light text-cream-50 mb-5"
+            className="font-[var(--font-display)] text-2xl sm:text-4xl lg:text-5xl font-light text-warm-gray-100 mb-5"
           >
             A complete <span className="gradient-text italic">buying</span>{" "}
             journey
@@ -99,7 +99,7 @@ export default function BuyingJourney() {
         <div className="hidden lg:block relative mb-0">
           <div
             ref={lineRef}
-            className="absolute top-1/2 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-burgundy-900 via-burgundy-700 to-burgundy-900 origin-left"
+            className="absolute top-1/2 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-burgundy-200 via-burgundy-400 to-burgundy-200 origin-left"
           />
         </div>
 
@@ -119,11 +119,11 @@ export default function BuyingJourney() {
             >
               <motion.div
                 whileHover={{ scale: 1.08, y: -4 }}
-                className="glass-card rounded-2xl p-8 h-full flex flex-col items-center"
+                className="glass-card rounded-2xl p-6 sm:p-8 h-full flex flex-col items-center"
               >
                 {/* Step number */}
                 <div className="relative mb-5">
-                  <div className="w-16 h-16 rounded-full bg-burgundy-950 flex items-center justify-center text-burgundy-400 group-hover:bg-burgundy-800 group-hover:text-white transition-all">
+                  <div className="w-16 h-16 rounded-full bg-burgundy-50 flex items-center justify-center text-burgundy-700 group-hover:bg-burgundy-800 group-hover:text-white transition-all">
                     {step.icon}
                   </div>
                   <span className="absolute -top-2 -right-2 w-7 h-7 bg-burgundy-800 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
@@ -131,7 +131,7 @@ export default function BuyingJourney() {
                   </span>
                 </div>
 
-                <h3 className="font-semibold text-cream-50 mb-2">
+                <h3 className="font-semibold text-warm-gray-100 mb-2">
                   {step.title}
                 </h3>
                 <p className="text-sm text-warm-gray-500 leading-relaxed">

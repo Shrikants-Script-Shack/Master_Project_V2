@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const announcements = [
@@ -50,7 +51,7 @@ export default function Header() {
         initial={{ y: -40 }}
         animate={{ y: hidden ? -40 : 0 }}
         transition={{ duration: 0.3 }}
-        className="bg-burgundy-950 text-cream-200 text-xs tracking-[0.25em] font-medium py-2.5 relative z-50 overflow-hidden border-b border-burgundy-900/50"
+        className="bg-burgundy-800 text-white text-xs tracking-[0.25em] font-medium py-2.5 relative z-50 overflow-hidden border-b border-burgundy-700/30"
       >
         <div className="absolute inset-0 shimmer opacity-20" />
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
@@ -82,7 +83,7 @@ export default function Header() {
         className={`sticky top-0 z-40 transition-all duration-500 ${
           scrolled
             ? "glass-card shadow-lg"
-            : "bg-surface-300/80 backdrop-blur-sm"
+            : "bg-cream-50"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -92,7 +93,7 @@ export default function Header() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-warm-gray-400 hover:text-burgundy-400 transition-colors duration-300 relative group"
+                className="text-sm text-warm-gray-400 hover:text-burgundy-700 transition-colors duration-300 relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-burgundy-500 transition-all duration-300 group-hover:w-full" />
@@ -102,12 +103,15 @@ export default function Header() {
 
           {/* Logo */}
           <a href="#" className="flex flex-col items-center gap-0.5 group">
-            <motion.span
-              className="font-[var(--font-display)] text-4xl lg:text-5xl font-light text-warm-gray-300 group-hover:text-burgundy-400 transition-colors duration-500"
-              whileHover={{ scale: 1.05 }}
-            >
-              V
-            </motion.span>
+            <motion.div whileHover={{ scale: 1.05 }}>
+              <Image
+                src="/images/Vlogo.png"
+                alt="V"
+                width={60}
+                height={60}
+                className="h-10 lg:h-12 w-auto object-contain"
+              />
+            </motion.div>
             <span className="text-[10px] tracking-[0.3em] text-warm-gray-500 uppercase">
               Premium facial tissues
             </span>
@@ -115,10 +119,10 @@ export default function Header() {
 
           {/* Right Actions */}
           <div className="hidden lg:flex items-center gap-6">
-            <button className="text-sm text-warm-gray-400 hover:text-burgundy-400 transition-colors border border-warm-gray-700 rounded-full px-4 py-1.5 hover:border-burgundy-700">
+            <button className="text-sm text-warm-gray-400 hover:text-burgundy-700 transition-colors border border-warm-gray-700 rounded-full px-4 py-1.5 hover:border-burgundy-700">
               Arabic
             </button>
-            <button className="text-sm text-warm-gray-400 hover:text-burgundy-400 transition-colors">
+            <button className="text-sm text-warm-gray-400 hover:text-burgundy-700 transition-colors">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -160,7 +164,7 @@ export default function Header() {
 
           {/* Mobile Toggle */}
           <button
-            className="lg:hidden text-warm-gray-300"
+            className="lg:hidden text-warm-gray-200"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             <svg
@@ -196,14 +200,14 @@ export default function Header() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden overflow-hidden glass-card border-t border-warm-gray-800"
+              className="lg:hidden overflow-hidden glass-card border-t border-warm-gray-700"
             >
               <nav className="flex flex-col px-6 py-4 gap-4">
                 {navLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="text-sm text-warm-gray-400 hover:text-burgundy-400 transition-colors"
+                    className="text-sm text-warm-gray-400 hover:text-burgundy-700 transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}

@@ -32,8 +32,8 @@ export default function FormatGuide() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 lg:py-32 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-surface-300 via-burgundy-950/30 to-surface-300 pointer-events-none" />
+    <section className="py-16 sm:py-24 lg:py-32 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-burgundy-50/15 to-transparent pointer-events-none" />
 
       <div ref={ref} className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
@@ -42,18 +42,18 @@ export default function FormatGuide() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-3 text-xs tracking-[0.3em] text-burgundy-400 font-medium uppercase mb-6"
+            className="inline-flex items-center gap-3 text-xs tracking-[0.3em] text-burgundy-700 font-medium uppercase mb-6"
           >
-            <span className="w-8 h-[1.5px] bg-burgundy-500" />
+            <span className="w-8 h-[1.5px] bg-burgundy-700" />
             Format Guide
-            <span className="w-8 h-[1.5px] bg-burgundy-500" />
+            <span className="w-8 h-[1.5px] bg-burgundy-700" />
           </motion.span>
 
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="font-[var(--font-display)] text-4xl lg:text-5xl font-light text-cream-50 mb-5"
+            className="font-[var(--font-display)] text-2xl sm:text-4xl lg:text-5xl font-light text-warm-gray-100 mb-5"
           >
             Three sizes. A{" "}
             <span className="gradient-text italic">clearer</span> choice.
@@ -70,7 +70,7 @@ export default function FormatGuide() {
         </div>
 
         {/* Format cards */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {formats.map((format, i) => (
             <motion.div
               key={format.name}
@@ -91,8 +91,8 @@ export default function FormatGuide() {
                 }`}
               >
                 <div
-                  className={`text-5xl font-[var(--font-display)] font-light mb-2 ${
-                    format.highlight ? "text-white" : "text-burgundy-400"
+                  className={`text-4xl sm:text-5xl font-[var(--font-display)] font-light mb-2 ${
+                    format.highlight ? "text-white" : "text-burgundy-700"
                   }`}
                 >
                   {format.sheets}
@@ -109,7 +109,7 @@ export default function FormatGuide() {
 
                 <div
                   className={`font-semibold text-lg mb-1 ${
-                    format.highlight ? "text-white" : "text-cream-50"
+                    format.highlight ? "text-white" : "text-warm-gray-100"
                   }`}
                 >
                   {format.name}

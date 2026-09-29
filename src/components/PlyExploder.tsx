@@ -41,30 +41,30 @@ export default function PlyExploder() {
   const inView = useInView(headingRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
+    <section className="py-16 sm:py-24 lg:py-32 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-surface-300 via-surface-200 to-surface-300 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-burgundy-950/30 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-burgundy-50/15 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div ref={headingRef} className="text-center max-w-2xl mx-auto mb-16">
+        <div ref={headingRef} className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-3 text-xs tracking-[0.3em] text-burgundy-400 font-medium uppercase mb-6"
+            className="inline-flex items-center gap-3 text-xs tracking-[0.3em] text-burgundy-700 font-medium uppercase mb-6"
           >
-            <span className="w-8 h-[1.5px] bg-burgundy-500" />
+            <span className="w-8 h-[1.5px] bg-burgundy-700" />
             Layer View
-            <span className="w-8 h-[1.5px] bg-burgundy-500" />
+            <span className="w-8 h-[1.5px] bg-burgundy-700" />
           </motion.span>
 
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="font-[var(--font-display)] text-4xl lg:text-5xl font-light text-cream-50 mb-5"
+            className="font-[var(--font-display)] text-2xl sm:text-4xl lg:text-5xl font-light text-warm-gray-100 mb-5"
           >
             4 layers,{" "}
             <span className="gradient-text italic">engineered softness</span>
@@ -82,7 +82,7 @@ export default function PlyExploder() {
         </div>
 
         {/* Main content — layers + info */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16">
           {/* Left: 3D Layer Stack */}
           <div className="flex-1 flex justify-center">
             <div
@@ -96,7 +96,7 @@ export default function PlyExploder() {
                 }}
                 transition={{ type: "spring", stiffness: 80, damping: 20 }}
                 style={{ transformStyle: "preserve-3d" }}
-                className="relative w-[300px] sm:w-[380px]"
+                className="relative w-[260px] sm:w-[300px] md:w-[380px]"
               >
                 {LAYERS.map((layer, i) => {
                   const isActive = activeLayer === i;
@@ -177,11 +177,11 @@ export default function PlyExploder() {
                                 >
                                   {i + 1}
                                 </span>
-                                <span className="text-[11px] font-medium text-surface-300">
+                                <span className="text-[11px] font-medium text-warm-gray-400">
                                   {layer.title}
                                 </span>
                               </div>
-                              <span className="text-[10px] text-surface-200/60 font-medium tracking-wider uppercase">
+                              <span className="text-[10px] text-warm-gray-500 font-medium tracking-wider uppercase">
                                 PLY {i + 1}
                               </span>
                             </motion.div>
@@ -191,7 +191,7 @@ export default function PlyExploder() {
                         {/* V watermark when stacked */}
                         {!exploded && i === 0 && (
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <span className="text-2xl font-[var(--font-display)] font-light text-surface-300/15 select-none">
+                            <span className="text-2xl font-[var(--font-display)] font-light text-warm-gray-400/15 select-none">
                               V
                             </span>
                           </div>
@@ -271,10 +271,10 @@ export default function PlyExploder() {
                       {activeLayer + 1}
                     </span>
                     <div>
-                      <h3 className="text-lg font-medium text-cream-50">
+                      <h3 className="text-lg font-medium text-warm-gray-100">
                         {LAYERS[activeLayer].title}
                       </h3>
-                      <span className="text-[10px] tracking-[0.2em] text-burgundy-400 uppercase">
+                      <span className="text-[10px] tracking-[0.2em] text-burgundy-700 uppercase">
                         {LAYERS[activeLayer].label}
                       </span>
                     </div>

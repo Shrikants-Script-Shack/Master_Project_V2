@@ -49,12 +49,12 @@ export default function FloatingTissues() {
         border-radius: 4px 4px 8px 8px;
         background: linear-gradient(
           ${135 + Math.random() * 90}deg,
-          rgba(${r}, ${g}, ${b}, ${0.03 + Math.random() * 0.04}),
-          rgba(255, 253, 248, ${0.02 + Math.random() * 0.03})
+          rgba(${r}, ${g}, ${b}, ${0.06 + Math.random() * 0.06}),
+          rgba(255, 253, 248, ${0.04 + Math.random() * 0.05})
         );
-        box-shadow: 0 2px 8px rgba(${r}, ${g}, ${b}, 0.03);
+        box-shadow: 0 2px 8px rgba(${r}, ${g}, ${b}, 0.05);
         backdrop-filter: blur(1px);
-        border: 1px solid rgba(255, 250, 240, 0.1);
+        border: 1px solid rgba(180, 150, 115, 0.12);
       `;
 
       container.appendChild(el);

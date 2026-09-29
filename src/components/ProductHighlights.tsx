@@ -96,8 +96,8 @@ export default function ProductHighlights() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-24 relative">
-      <div className="section-divider max-w-4xl mx-auto mb-24" />
+    <section ref={ref} className="py-16 sm:py-24 relative">
+      <div className="section-divider max-w-4xl mx-auto mb-12 sm:mb-24" />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -111,11 +111,11 @@ export default function ProductHighlights() {
                 delay: i * 0.15,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="glass-card rounded-2xl p-8 text-center group hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+              className="glass-card rounded-2xl p-6 sm:p-8 text-center group hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
             >
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}
-                className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-burgundy-950 text-burgundy-400 mb-5 group-hover:bg-burgundy-700 group-hover:text-white transition-all duration-500"
+                className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-burgundy-50 text-burgundy-700 mb-5 group-hover:bg-burgundy-700 group-hover:text-white transition-all duration-500"
               >
                 {item.icon}
               </motion.div>

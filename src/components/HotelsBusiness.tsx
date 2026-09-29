@@ -20,25 +20,25 @@ export default function HotelsBusiness() {
     <section
       ref={sectionRef}
       id="business"
-      className="py-24 lg:py-32 relative overflow-hidden"
+      className="py-16 sm:py-24 lg:py-32 relative overflow-hidden"
     >
       {/* Dark background panel */}
       <motion.div
         style={{ y: bgY }}
-        className="absolute inset-0 bg-surface-100 -skew-y-1 scale-105 origin-top-left border-y border-warm-gray-800/30"
+        className="absolute inset-0 bg-surface-200 -skew-y-1 scale-105 origin-top-left border-y border-warm-gray-700/20"
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Text */}
           <div ref={textRef} className="space-y-8">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-3 text-xs tracking-[0.3em] text-burgundy-400 font-medium uppercase"
+              className="inline-flex items-center gap-3 text-xs tracking-[0.3em] text-burgundy-700 font-medium uppercase"
             >
-              <span className="w-8 h-[1.5px] bg-burgundy-400" />
+              <span className="w-8 h-[1.5px] bg-burgundy-700" />
               03 · Hotels & Business
             </motion.span>
 
@@ -46,10 +46,10 @@ export default function HotelsBusiness() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="font-[var(--font-display)] text-3xl lg:text-4xl font-light text-white leading-snug"
+              className="font-[var(--font-display)] text-2xl sm:text-3xl lg:text-4xl font-light text-warm-gray-100 leading-snug"
             >
               Supply shaped around your{" "}
-              <span className="text-burgundy-400 italic">operation</span>
+              <span className="text-burgundy-700 italic">operation</span>
             </motion.h2>
 
             <motion.p
@@ -111,14 +111,14 @@ export default function HotelsBusiness() {
                 className="w-full h-auto"
               />
               {/* Glass overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-warm-gray-900/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-warm-gray-100/20 to-transparent" />
             </div>
 
             {/* Business badge */}
             <motion.div
               animate={{ y: [-8, 8, -8] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-4 -left-4 glass-card-dark text-white px-5 py-3 rounded-xl"
+              className="absolute -bottom-4 -left-4 glass-card-dark text-warm-gray-200 px-5 py-3 rounded-xl"
             >
               <div className="text-xs tracking-[0.15em] uppercase font-medium">
                 B2B Supply

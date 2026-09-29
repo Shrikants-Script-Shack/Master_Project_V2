@@ -101,17 +101,17 @@ function ProductCard({
               alt={product.name}
               width={400}
               height={400}
-              className="w-auto h-[280px] object-contain drop-shadow-2xl"
+              className="w-auto h-[200px] sm:h-[280px] object-contain drop-shadow-2xl"
             />
           </div>
         </div>
 
         {/* Info below image */}
         <div className="mt-6 flex flex-col flex-1 items-center">
-          <span className="text-[10px] tracking-[0.2em] text-burgundy-400 font-medium uppercase mb-2">
+          <span className="text-[10px] tracking-[0.2em] text-burgundy-700 font-medium uppercase mb-2">
             0{index + 1}
           </span>
-          <h3 className="font-[var(--font-display)] text-2xl font-medium text-cream-50">
+          <h3 className="font-[var(--font-display)] text-2xl font-medium text-warm-gray-100">
             {product.name}
           </h3>
           <span className="text-sm text-warm-gray-400 mt-1">
@@ -126,7 +126,7 @@ function ProductCard({
             {product.specs.map((spec) => (
               <span
                 key={spec}
-                className="text-xs bg-surface-200 text-warm-gray-400 px-3 py-1.5 rounded-full border border-warm-gray-800"
+                className="text-xs bg-cream-100 text-warm-gray-400 px-3 py-1.5 rounded-full border border-warm-gray-700"
               >
                 {spec}
               </span>
@@ -136,7 +136,7 @@ function ProductCard({
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="bg-burgundy-800 text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-burgundy-500 transition-colors duration-300 flex items-center justify-center gap-2 glow-burgundy"
+            className="bg-burgundy-800 text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-burgundy-700 transition-colors duration-300 flex items-center justify-center gap-2 glow-burgundy"
           >
             Choose product
             <svg
@@ -165,32 +165,39 @@ export default function Collection() {
   const inView = useInView(headingRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="collection" className="py-24 lg:py-32 relative">
+    <section id="collection" className="py-16 sm:py-24 lg:py-32 relative">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-burgundy-950/50 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-burgundy-50/20 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
-        <div ref={headingRef} className="text-center max-w-2xl mx-auto mb-16">
+        <div ref={headingRef} className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-3 text-xs tracking-[0.3em] text-burgundy-400 font-medium uppercase mb-6"
+            className="inline-flex items-center gap-3 text-xs tracking-[0.3em] text-burgundy-700 font-medium uppercase mb-6"
           >
-            <span className="w-8 h-[1.5px] bg-burgundy-500" />
+            <span className="w-8 h-[1.5px] bg-burgundy-700" />
             01 · The Collection
-            <span className="w-8 h-[1.5px] bg-burgundy-500" />
+            <span className="w-8 h-[1.5px] bg-burgundy-700" />
           </motion.span>
 
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="font-[var(--font-display)] text-4xl lg:text-5xl font-light text-cream-50 mb-5"
+            className="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-light text-warm-gray-100 mb-5"
           >
-            Choose the <span className="gradient-text italic">V</span> for your
-            space
+            Choose the{" "}
+            <Image
+              src="/images/Vlogo.png"
+              alt="V"
+              width={48}
+              height={48}
+              className="inline-block h-8 sm:h-10 lg:h-12 w-auto object-contain align-middle"
+            />{" "}
+            for your space
           </motion.h2>
 
           <motion.p
@@ -206,11 +213,10 @@ export default function Collection() {
 
         {/* Product row — full width, horizontal scroll on small screens */}
         <div
-          className="flex gap-8 overflow-x-auto scrollbar-hide px-2"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-8"
         >
           {products.map((product, i) => (
-            <div key={product.name} className="flex-1 min-w-[280px]">
+            <div key={product.name}>
               <ProductCard product={product} index={i} />
             </div>
           ))}

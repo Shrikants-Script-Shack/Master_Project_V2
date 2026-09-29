@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const footerLinks = {
@@ -28,10 +29,10 @@ export default function Footer() {
       <div className="h-px bg-gradient-to-r from-transparent via-burgundy-700 to-transparent" />
 
       {/* Background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-burgundy-900/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-burgundy-50/15 rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
-        <div className="grid lg:grid-cols-5 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto px-6 py-10 sm:py-16 relative z-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-12 mb-10 sm:mb-16">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-5">
             <motion.div
@@ -39,9 +40,13 @@ export default function Footer() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
             >
-              <span className="font-[var(--font-display)] text-5xl font-light text-warm-gray-300">
-                V
-              </span>
+              <Image
+                src="/images/Vlogo.png"
+                alt="V"
+                width={80}
+                height={80}
+                className="h-12 w-auto object-contain"
+              />
             </motion.div>
             <p className="text-sm leading-relaxed max-w-xs">
               Premium facial tissues for considered everyday spaces.
@@ -81,7 +86,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm hover:text-burgundy-400 transition-colors duration-300"
+                      className="text-sm hover:text-burgundy-700 transition-colors duration-300"
                     >
                       {link.label}
                     </a>
@@ -93,7 +98,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-warm-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-warm-gray-700 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-warm-gray-600">
             &copy; 2026 V. All rights reserved.
           </p>
@@ -101,7 +106,7 @@ export default function Footer() {
             <span className="text-xs text-warm-gray-600">
               Qatar Edition
             </span>
-            <button className="text-xs text-warm-gray-500 hover:text-burgundy-400 transition-colors border border-warm-gray-700 rounded-full px-3 py-1 hover:border-burgundy-700">
+            <button className="text-xs text-warm-gray-500 hover:text-burgundy-700 transition-colors border border-warm-gray-700 rounded-full px-3 py-1 hover:border-burgundy-700">
               العربية
             </button>
           </div>

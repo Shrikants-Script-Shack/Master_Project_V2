@@ -12,37 +12,37 @@
   --color-burgundy-800: #6B1D2A;
   --color-burgundy-900: #4A1019;
   --color-burgundy-950: #2D0A10;
-  --color-cream-50: #F5F3F0;
-  --color-cream-100: #E8E4DE;
-  --color-cream-200: #D1CBC2;
-  --color-cream-300: #A89F94;
-  --color-surface-50: #1E1B17;
-  --color-surface-100: #1A1714;
-  --color-surface-200: #151210;
-  --color-surface-300: #0F0D0C;
-  --color-warm-gray-100: #F5F3F0;
-  --color-warm-gray-200: #E8E4DE;
-  --color-warm-gray-300: #D1CBC2;
-  --color-warm-gray-400: #A89F94;
+  --color-cream-50: #FEFDFB;
+  --color-cream-100: #F5F3F0;
+  --color-cream-200: #E8E4DE;
+  --color-cream-300: #D1CBC2;
+  --color-surface-50: #FFFFFF;
+  --color-surface-100: #F9F7F4;
+  --color-surface-200: #F0EDE8;
+  --color-surface-300: #FEFDFB;
+  --color-warm-gray-100: #1A1714;
+  --color-warm-gray-200: #2A2520;
+  --color-warm-gray-300: #3D3832;
+  --color-warm-gray-400: #5C554D;
   --color-warm-gray-500: #7A7168;
-  --color-warm-gray-600: #5C554D;
-  --color-warm-gray-700: #3D3832;
-  --color-warm-gray-800: #2A2520;
-  --color-warm-gray-900: #1A1714;
+  --color-warm-gray-600: #A89F94;
+  --color-warm-gray-700: #D1CBC2;
+  --color-warm-gray-800: #E8E4DE;
+  --color-warm-gray-900: #F5F3F0;
   --font-sans: var(--font-inter);
   --font-display: var(--font-playfair);
 }
 
 :root {
-  --glass-bg: rgba(30, 27, 23, 0.55);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-bg-light: rgba(30, 27, 23, 0.6);
-  --glass-border-light: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-bg-light: rgba(255, 255, 255, 0.65);
+  --glass-border-light: rgba(0, 0, 0, 0.08);
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-burgundy-800) var(--color-surface-300);
+  scrollbar-color: var(--color-burgundy-700) var(--color-cream-200);
 }
 
 html {
@@ -51,33 +51,27 @@ html {
 
 body {
   background: var(--color-surface-300);
-  color: var(--color-warm-gray-100);
+  color: var(--color-warm-gray-400);
   font-family: var(--font-sans), system-ui, sans-serif;
   overflow-x: hidden;
 }
 
-/* Glass card utility — dark frosted glass */
+/* Glass card utility — clean solid card for light theme */
 .glass-card {
-  background: var(--glass-bg-light);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border-light);
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .glass-card-dark {
-  background: rgba(15, 13, 12, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
-/* Gradient text — brighter on dark bg */
+/* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-burgundy-500) 0%, var(--color-burgundy-400) 50%, var(--color-burgundy-300) 100%);
+  background: linear-gradient(135deg, var(--color-burgundy-800) 0%, var(--color-burgundy-700) 50%, var(--color-burgundy-600) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -93,7 +87,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.06) 50%,
+    rgba(107, 29, 42, 0.08) 50%,
     transparent 100%
   );
   background-size: 200% 100%;
@@ -110,15 +104,15 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Glow effect — intensified for dark */
+/* Glow effect — subtle for light */
 .glow-burgundy {
-  box-shadow: 0 0 50px rgba(107, 29, 42, 0.5), 0 0 100px rgba(107, 29, 42, 0.2), 0 0 150px rgba(107, 29, 42, 0.08);
+  box-shadow: 0 0 30px rgba(107, 29, 42, 0.2), 0 0 60px rgba(107, 29, 42, 0.08);
 }
 
 /* Section divider gradient */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-burgundy-700), transparent);
+  background: linear-gradient(90deg, transparent, var(--color-burgundy-300), transparent);
 }
 
 /* Custom cursor glow on hover (for cards) */
@@ -134,7 +128,7 @@ body {
   left: var(--mouse-x, 50%);
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(107, 29, 42, 0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(107, 29, 42, 0.1) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   pointer-events: none;
   opacity: 0;
